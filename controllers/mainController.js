@@ -36,7 +36,8 @@ exports.getDashBoard = catchAsync(async (_, res, next) => {
 				},
 			});
 		})
-		.catch((_) => {
+		.catch((err) => {
+			console.log("Error Updated", err);
 			return next(new AppError("Something Went Wrong With the C_API !", 500));
 		});
 });
